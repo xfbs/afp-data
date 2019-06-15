@@ -1,0 +1,2 @@
+# afp-data
+amateurfunk daten

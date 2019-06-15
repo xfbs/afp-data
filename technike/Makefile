@@ -1,4 +1,7 @@
 all: technik_e.pdf
 
 %.pdf: %.tex
-	latexmk -gg -lualatex $<
+	latexmk -lualatex $<
+
+clean:
+	$(RM) *.aux *.log *.toc *.fdb_latexmk *.fls

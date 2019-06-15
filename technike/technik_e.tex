@@ -16,6 +16,10 @@
 ]
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage{microtype}
+%\usepackage{sansmath}
+
+% underlines
+\usepackage{soul}
 
 % space to leave in between answers.
 \renewcommand{\arraystretch}{1.2}
@@ -45,9 +49,10 @@
 \usetikzlibrary{positioning}
 \newcommand{\graphic}[1]{&#1\\}
 \tikzset{
-  every circuit symbol/.style={draw,very thick},
-  every circuit wire/.style={draw,very thick},
-  every circuit/.style={draw,very thick,huge circuit symbols}}
+  %every circuit symbol/.style={draw,very thick},
+  %every circuit wire/.style={draw,very thick},
+  %every circuit/.style={draw,very thick,huge circuit symbols}
+}
 
 
 % quotes setup
@@ -75,8 +80,9 @@ Er kann jederzeit erweitert und aktualisiert werden. Neuauflagen werden im Amtsb
   \tableofcontents
   \twocolumn
   
-  \include{technik_e_questions}
-  \include{technik_e_formulas}
+  \setul{1pt}{1pt}
+  \include{questions}
+  \include{formulas}
 \end{document}
 
 

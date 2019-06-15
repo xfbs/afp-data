@@ -3,31 +3,31 @@
 \subsection{Allgemeine mathematische Grundkenntnisse}
 
 \begin{question}{TA101}{0,042 A entspricht}
-\answer{42⋅10-3 A.}
-\answer{42⋅103 A.}
-\answer{42⋅10-2 A.}
-\answer{42⋅10-1 A.}
+\answer{$\mathsf{42\cdot 10^{-3}}$ A.}
+\answer{$\mathsf{42 \cdot 10^3}$ A.}
+\answer{$\mathsf{42 \cdot 10^{-2}}$ A.}
+\answer{$\mathsf{42 \cdot 10^{-1}}$ A.}
 \end{question}
 
 \begin{question}{TA102}{0,00042 A entspricht}
-\answer{420.10-6 A.}
-\answer{420.106 A.}
-\answer{420.10-5 A.}
-\answer{42.10-6 A.}
+\answer{$\mathsf{420 \cdot 10^{-6}}$ A.}
+\answer{$\mathsf{420 \cdot 10^6}$ A.}
+\answer{$\mathsf{420 \cdot 10^{-5}}$ A.}
+\answer{$\mathsf{42 \cdot 10^{-6}}$ A.}
 \end{question}
 
 \begin{question}{TA103}{100 mW entspricht}
-\answer{10-1 W.}
+\answer{$\mathsf{10^{-1}}$ W.}
 \answer{0,001 W.}
 \answer{0,01 W.}
-\answer{10-2 W.}
+\answer{$\mathsf{10^{-2}}$ W.}
 \end{question}
 
 \begin{question}{TA104}{4 200 000 Hz entspricht}
-\answer{4,2⋅106 Hz.}
-\answer{4,2⋅105 Hz.}
-\answer{42⋅106 Hz.}
-\answer{42⋅10-5 Hz.}
+\answer{$\mathsf{4,2 \cdot 10^6}$ Hz.}
+\answer{$\mathsf{4,2 \cdot 10^5}$ Hz.}
+\answer{$\mathsf{42 \cdot 10^6}$ Hz.}
+\answer{$\mathsf{42 \cdot 10^{-5}}$ Hz.}
 \end{question}
 
 \subsection{Größen und Einheiten}
@@ -60,7 +60,7 @@
 \answer{Henry}
 \end{question}
 
-\begin{question}{TA205}{Welche der nachfolgenden Antworten enthält nur Basiseinheiten nach dem internationalen Einheitensystem?}
+\begin{question}{TA205}{Welche der nachfolgenden Antworten enthält \ul{nur} Basiseinheiten nach dem internationalen Einheitensystem?}
 \answer{Ampere, Kelvin, Meter, Sekunde}
 \answer{Sekunde, Meter, Volt, Watt}
 \answer{Farad, Henry, Ohm, Sekunde}
@@ -145,6 +145,26 @@
 \end{question}
 
 \begin{question}{TB202}{Folgende Schaltung eines Akkus besteht aus Zellen von je 2 V. Jede Zelle kann 10 Ah Ladung liefern. Welche Daten hat der Akku?}
+\graphic{\begin{tikzpicture}[circuit ee IEC,y=1cm,x=1cm]
+    \node [contact] (a) at (0,1) {};
+    \node [contact] (b) at (0,0) {};
+    \node [contact] (c) at (1,0) {};
+    \node [contact] (d) at (1,1) {};
+    \node [contact] (e) at (2,1) {};
+    \node [contact] (f) at (2,0) {};
+    \node [contact] (g) at (3,0) {};
+    \node [contact] (h) at (3,1) {};
+    \node [contact] (i) at (4,1) {};
+    \node [contact] (j) at (4,0) {};
+    \node [contact] (k) at (5,0) {};
+    \node [contact] (l) at (5,1) {};
+    %\node [contact] (h) at (1,0) {};
+    %\node [contact] (i) at (1,0) {};
+    \draw (a) to [battery] (b) to (c) to [battery] (d) to (e) to [battery] (f) to (g) to [battery] (h) to (i) to [battery] (j) to (k) to [battery] (l);
+    %\draw (left) to [battery={info={1,5V}}] (middle);
+    %\draw (right) to [battery={info'={1,5V}}] (middle);
+    %\draw (0,1) to (0,0) to [voltmeter={info={?}}] (2,0) to (2,1);
+\end{tikzpicture}}
 \answer{12 V / 10 Ah}
 \answer{12 V / 60 Ah}
 \answer{2 V / 10 Ah}

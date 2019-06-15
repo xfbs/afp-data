@@ -1,0 +1,84 @@
+\documentclass[
+  ngerman,
+  paper=a4,
+  10pt,
+  headings=small,
+  DIV=15,
+]{scrartcl}
+
+% use utf-8 encoding.
+\usepackage[utf8]{inputenc}
+
+% setup main font.
+\usepackage{fontspec}
+\setsansfont{Helvetica Neue}[
+  BoldFont = {Helvetica Neue Bold},
+]
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+
+% space to leave in between answers.
+\renewcommand{\arraystretch}{1.2}
+
+% question environment (uses a table).
+\newenvironment{question}[2]{
+  \noindent
+  \setcounter{answer}{1}
+  \begin{tabular}{@{}cp{6.7cm}@{}}
+  \textbf{#1} & \textbf{#2}\\
+  \ifcsname #1\endcsname
+    Hi & oops\\
+  \fi
+}{
+  \end{tabular}
+  \bigskip
+}
+
+\newcounter{answer}
+\newcommand{\answer}[1]{
+  \textbf{\Alph{answer}}
+  \stepcounter{answer}
+  & #1\\}
+  
+\usepackage{tikz}
+\usetikzlibrary{circuits.ee.IEC}
+\usetikzlibrary{positioning}
+\newcommand{\graphic}[1]{&#1\\}
+\tikzset{
+  every circuit symbol/.style={draw,very thick},
+  every circuit wire/.style={draw,very thick},
+  every circuit/.style={draw,very thick,huge circuit symbols}}
+
+
+% quotes setup
+\usepackage{babel}
+\usepackage{csquotes}
+\MakeOuterQuote{"}
+
+\title{Prüfungsfragen im Prüfungsteil "Technische Kenntnisse" bei Prüfungen zum Erwerb von Amateurfunkzeugnissen der Klasse E}
+\date{September 2006}
+
+\begin{document}
+  % title page
+  \maketitle
+    
+  % first page
+  \newpage
+  \vspace*{\fill}
+  \noindent
+  Dieser Fragen- und Antwortenkatalog basiert auf §~4 Abs.~1 Amateurfunkgesetz (AFuG) in Verbindung mit §~4 der durch Artikel~1 Ziffer~2 der Ersten Verordnung zur Änderung der Amateurfunkverordnung vom 25.~August 2006 (BGBl.~I~S.~2070) geänderten Verordnung zum Gesetz über den Amateurfunk (AFuV) vom 15. Februar 2005 (BGBl.~I~S.~242) in der Form, wie sie am 1.~Februar 2007 in Kraft tritt. Aus dem Katalog ersichtliche Einzelheiten werden erst ab dem 1.~Februar 2007 bei Amateurfunkprüfungen umgesetzt bzw. angewendet. Dazu erfolgt vor dem 1.~Februar 2007 eine entsprechende Veröffentlichung im Amtsblatt der Bundesnetzagentur.
+
+\bigskip\noindent
+Dieser Fragen- und Antwortenkatalog unterliegt den Bestimmungen des §~5 des Urheberrechtsgesetzes (UrhG).
+Er kann jederzeit erweitert und aktualisiert werden. Neuauflagen werden im Amtsblatt der Bundesnetzagentur bekannt gegeben.
+  \newpage
+  \tableofcontents
+  \twocolumn
+  
+  \include{technik_e_questions}
+  \include{technik_e_formulas}
+\end{document}
+
+
+
+

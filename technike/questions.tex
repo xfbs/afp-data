@@ -307,6 +307,7 @@
 \end{question}
 
 \begin{question}{TB505}{Die Polarisation des Sendesignals in der Hauptstrahlrichtung dieser Richtantenne ist}
+\graphic{\textbf{TODO}}
 \answer{vertikal.}
 \answer{horizontal.}
 \answer{rechtsdrehend.}
@@ -476,10 +477,10 @@
 \end{question}
 
 \begin{question}{TB902}{Welcher der nachfolgenden Zusammenhänge ist richtig?}
-\answer{U = R ⋅ I}
-\answer{I = U ⋅R}
-\answer{IR = U}
-\answer{RI = U}
+\answer{$\mathsf{U = R \cdot I}$}
+\answer{$\mathsf{I = U \cdot R}$}
+\answer{$\mathsf{R = I / U}$}
+\answer{$\mathsf{I = R / U}$}
 \end{question}
 
 \begin{question}{TB903}{Welche Spannung lässt einen Strom von 2 A durch einen Widerstand von 50 Ohm flie- ßen?}
@@ -799,6 +800,17 @@
 \end{question}
 
 \begin{question}{TC508}{Wozu dient folgende Schaltung? Sie dient}
+\graphic{\begin{tikzpicture}[circuit ee IEC,y=0.5cm,x=0.8cm]
+    \node [contact] (a) at (0,2) {};
+    \node [contact] (b) at (3,2) {};
+    \node [contact] (c) at (4,2) {};
+    \node [contact] (d) at (0,0) {};
+    \node [contact] (e) at (3,0) {};
+    \node [contact] (f) at (4,0) {};
+    \draw (a) to [resistor] (b) to (c);
+    \draw (e) to [Zener diode] (b);
+    \draw (d) to (e) to (f);
+\end{tikzpicture}}
 \answer{zur Spannungsstabilisierung.}
 \answer{zur Signalbegrenzung.}
 \answer{als Leuchtanzeige.}
@@ -806,6 +818,17 @@
 \end{question}
 
 \begin{question}{TC509}{Wozu dient die folgende Schaltung? Sie dient}
+\graphic{\begin{tikzpicture}[circuit ee IEC,y=0.5cm,x=0.8cm]
+    \node [contact] (a) at (0,2) {};
+    \node [contact] (b) at (3,2) {};
+    \node [contact] (c) at (4,2) {};
+    \node [contact] (d) at (0,0) {};
+    \node [contact] (e) at (3,0) {};
+    \node [contact] (f) at (4,0) {};
+    \draw (a) to [resistor] (b) to (c);
+    \draw (b) to [diode={light emitting}] (e);
+    \draw (d) to (e) to (f);
+\end{tikzpicture}}
 \answer{als Leuchtanzeige.}
 \answer{zur Signalbegrenzung.}
 \answer{zur Spannungsstabilisierung.}

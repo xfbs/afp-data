@@ -146,7 +146,7 @@
 
 \begin{question}{TB202}{Folgende Schaltung eines Akkus besteht aus Zellen von je 2 V. Jede Zelle kann 10 Ah Ladung liefern. Welche Daten hat der Akku?}
 \graphic{\begin{tikzpicture}[circuit ee IEC,y=1cm,x=1cm]
-    \node [contact] (a) at (0,1) {};
+    \node [contact,info={-}] (a) at (0,1) {};
     \node [contact] (b) at (0,0) {};
     \node [contact] (c) at (1,0) {};
     \node [contact] (d) at (1,1) {};
@@ -157,13 +157,8 @@
     \node [contact] (i) at (4,1) {};
     \node [contact] (j) at (4,0) {};
     \node [contact] (k) at (5,0) {};
-    \node [contact] (l) at (5,1) {};
-    %\node [contact] (h) at (1,0) {};
-    %\node [contact] (i) at (1,0) {};
+    \node [contact,info={+}] (l) at (5,1) {};
     \draw (a) to [battery] (b) to (c) to [battery] (d) to (e) to [battery] (f) to (g) to [battery] (h) to (i) to [battery] (j) to (k) to [battery] (l);
-    %\draw (left) to [battery={info={1,5V}}] (middle);
-    %\draw (right) to [battery={info'={1,5V}}] (middle);
-    %\draw (0,1) to (0,0) to [voltmeter={info={?}}] (2,0) to (2,1);
 \end{tikzpicture}}
 \answer{12 V / 10 Ah}
 \answer{12 V / 60 Ah}
@@ -179,6 +174,13 @@
 \end{question}
 
 \begin{question}{TB204}{Kann in folgender Schaltung von zwei gleichen Spannungsquellen Strom fließen? Welche Begründung ist richtig?}
+\graphic{\begin{tikzpicture}[circuit ee IEC,y=1cm,x=1cm]
+    \node [contact] (a) at (0,0) {};
+    \node [contact] (b) at (1.5,0) {};
+    \node [contact] (c) at (2.5,0) {};
+    \node [contact] (d) at (4,0) {};
+    \draw (a) to [battery] (b) to [circuit handle symbol={fill,isosceles triangle,inner xsep=0.5pt,inner ysep=1.5pt}] (c) to [battery] (d);
+    \end{tikzpicture}}
 \answer{Nein, weil kein geschlossener Stromkreis vorhanden ist.}
 \answer{Nein, weil der Pluspol mit dem Minuspol verbunden ist.}
 \answer{Ja, sogar Kurzschlussstrom, weil der Pluspol mit dem Minuspol verbunden ist.}
@@ -202,6 +204,15 @@
 \end{question}
 
 \begin{question}{TB302}{Wie nennt man das Feld zwischen zwei parallelen Kondensatorplatten bei Anschluss einer Gleichspannung?}
+\graphic{\begin{tikzpicture}[y=0.1cm,x=0.1cm]
+    \foreach \x in {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15} {
+        \draw[gray,-stealth] (2,\x.5) -- (19,\x.5);
+    }% FIXME: arrow style.
+    \draw[very thick] (2,0) -- (2,16);
+    \draw[very thick] (19,0) -- (19,16);
+    \draw[very thick] (0,8) -- (2,8);
+    \draw[very thick] (19,8) -- (21,8);
+\end{tikzpicture}}
 \answer{Homogenes elektrisches Feld}
 \answer{Homogenes magnetisches Feld}
 \answer{Polarisiertes elektrisches Feld}
@@ -209,6 +220,7 @@
 \end{question}
 
 \begin{question}{TB303}{Wie werden die mit X gekennzeichneten Feldlinien einer Vertikalantenne bezeichnet?}
+\graphic{TODO}
 \answer{Elektrische Feldlinien}
 \answer{Magnetische Feldlinien}
 \answer{Polarisierte Feldlinien}
@@ -225,6 +237,7 @@
 \end{question}
 
 \begin{question}{TB402}{Wie nennt man das Feld im Innern einer langen Zylinderspule beim Fließen eines Gleichstroms?}
+\graphic{TODO}
 \answer{Homogenes magnetisches Feld}
 \answer{Homogenes elektrisches Feld}
 \answer{Konzentrisches magnetisches Feld}
@@ -239,6 +252,7 @@
 \end{question}
 
 \begin{question}{TB404}{Wie werden die mit X gekennzeichneten Feldlinien einer Vertikalantenne bezeichnet?}
+\graphic{TODO}
 \answer{Magnetische Feldlinien}
 \answer{Elektrische Feldlinien}
 \answer{Radiale Feldlinien}
@@ -268,7 +282,17 @@
 \answer{über die sich unabhängig voneinander ausbreitenden und senkrecht zueinander stehenden elektrischen und magnetischen Felder.}
 \end{question}
 
-\begin{question}{TB503}{Das folgende Bild zeigt die Feldlinien eines elektromagnetischen Feldes. Welche Polari sation hat die skizzierte Wellenfront?}
+\begin{question}{TB503}{Das folgende Bild zeigt die Feldlinien eines elektromagnetischen Feldes. Welche Polarisation hat die skizzierte Wellenfront?}
+\graphic{\begin{tikzpicture}[x=0.2cm,y=0.2cm]
+\draw[very thick,-stealth] (3,0) -- (3,10);
+\draw[very thick,-stealth] (1.5,1.5) -- (1.5,11.5);
+\draw[very thick,-stealth] (0,3) -- (0,13);
+\draw[very thick,-stealth] (-4,7) -- (6,7);
+\draw[very thick,-stealth] (-2.5,5.5) -- (7.5,5.5);
+\draw[very thick,-stealth] (-1,4) -- (9,4);
+\node at (4,12) {\textbf{H}};
+\node at (9,7) {\textbf{E}};
+\end{tikzpicture}}
 \answer{Horizontale Polarisation}
 \answer{Vertikale Polarisation}
 \answer{Rechtsdrehende Polarisation}
